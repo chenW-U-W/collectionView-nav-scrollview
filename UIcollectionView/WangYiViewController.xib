@@ -16,8 +16,11 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQc-hn-jyK">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sQc-hn-jyK">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="BbK-RZ-3iv"/>
+                    </constraints>
                 </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbw-mZ-POJ">
                     <rect key="frame" x="190" y="248" width="46" height="30"/>
@@ -25,6 +28,11 @@
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="sQc-hn-jyK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="GXz-X8-8Ta"/>
+                <constraint firstItem="sQc-hn-jyK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="UDQ-8W-7cS"/>
+                <constraint firstAttribute="trailing" secondItem="sQc-hn-jyK" secondAttribute="trailing" id="m78-8l-D1S"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
         </view>
     </objects>
