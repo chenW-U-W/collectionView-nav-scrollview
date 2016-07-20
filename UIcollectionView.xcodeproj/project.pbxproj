@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		42400ACE1CD0BD6500533AA9 /* UIScrollView+panGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 42400ACD1CD0BD6500533AA9 /* UIScrollView+panGesture.m */; };
+		42400AD51CD98EC700533AA9 /* LFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42400AD31CD98EC700533AA9 /* LFirstViewController.m */; };
+		42400AD61CD98EC700533AA9 /* LFirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42400AD41CD98EC700533AA9 /* LFirstViewController.xib */; };
+		42400ADA1CD98EDA00533AA9 /* LSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42400AD81CD98EDA00533AA9 /* LSecondViewController.m */; };
+		42400ADB1CD98EDA00533AA9 /* LSecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42400AD91CD98EDA00533AA9 /* LSecondViewController.xib */; };
 		426EB1A81CC63A7B000F3CFE /* WangYiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 426EB1A61CC63A7B000F3CFE /* WangYiViewController.m */; };
 		426EB1A91CC63A7B000F3CFE /* WangYiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 426EB1A71CC63A7B000F3CFE /* WangYiViewController.xib */; };
 		426EB1AD1CC63ED8000F3CFE /* WangYiRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 426EB1AB1CC63ED8000F3CFE /* WangYiRootViewController.m */; };
@@ -33,6 +37,12 @@
 /* Begin PBXFileReference section */
 		42400ACC1CD0BD6500533AA9 /* UIScrollView+panGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+panGesture.h"; sourceTree = "<group>"; };
 		42400ACD1CD0BD6500533AA9 /* UIScrollView+panGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+panGesture.m"; sourceTree = "<group>"; };
+		42400AD21CD98EC700533AA9 /* LFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFirstViewController.h; sourceTree = "<group>"; };
+		42400AD31CD98EC700533AA9 /* LFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFirstViewController.m; sourceTree = "<group>"; };
+		42400AD41CD98EC700533AA9 /* LFirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFirstViewController.xib; sourceTree = "<group>"; };
+		42400AD71CD98EDA00533AA9 /* LSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSecondViewController.h; sourceTree = "<group>"; };
+		42400AD81CD98EDA00533AA9 /* LSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSecondViewController.m; sourceTree = "<group>"; };
+		42400AD91CD98EDA00533AA9 /* LSecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LSecondViewController.xib; sourceTree = "<group>"; };
 		426EB1A51CC63A7B000F3CFE /* WangYiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WangYiViewController.h; sourceTree = "<group>"; };
 		426EB1A61CC63A7B000F3CFE /* WangYiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WangYiViewController.m; sourceTree = "<group>"; };
 		426EB1A71CC63A7B000F3CFE /* WangYiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WangYiViewController.xib; sourceTree = "<group>"; };
@@ -152,6 +162,12 @@
 				426EB1AA1CC63ED8000F3CFE /* WangYiRootViewController.h */,
 				426EB1AB1CC63ED8000F3CFE /* WangYiRootViewController.m */,
 				426EB1AC1CC63ED8000F3CFE /* WangYiRootViewController.xib */,
+				42400AD21CD98EC700533AA9 /* LFirstViewController.h */,
+				42400AD31CD98EC700533AA9 /* LFirstViewController.m */,
+				42400AD41CD98EC700533AA9 /* LFirstViewController.xib */,
+				42400AD71CD98EDA00533AA9 /* LSecondViewController.h */,
+				42400AD81CD98EDA00533AA9 /* LSecondViewController.m */,
+				42400AD91CD98EDA00533AA9 /* LSecondViewController.xib */,
 				42AE6E671CBE0E3E0054D905 /* Assets.xcassets */,
 				42AE6E691CBE0E3E0054D905 /* LaunchScreen.storyboard */,
 				42AE6E6C1CBE0E3E0054D905 /* Info.plist */,
@@ -225,7 +241,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42400AD61CD98EC700533AA9 /* LFirstViewController.xib in Resources */,
 				42AE6E6B1CBE0E3E0054D905 /* LaunchScreen.storyboard in Resources */,
+				42400ADB1CD98EDA00533AA9 /* LSecondViewController.xib in Resources */,
 				42AE6E681CBE0E3E0054D905 /* Assets.xcassets in Resources */,
 				426EB1A91CC63A7B000F3CFE /* WangYiViewController.xib in Resources */,
 				426EB1CA1CC72B2A000F3CFE /* Info.plist in Resources */,
@@ -241,6 +259,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				426EB1D21CC72B2A000F3CFE /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				42400ADA1CD98EDA00533AA9 /* LSecondViewController.m in Sources */,
+				42400AD51CD98EC700533AA9 /* LFirstViewController.m in Sources */,
 				42AE6E631CBE0E3E0054D905 /* ViewController.m in Sources */,
 				426EB1D01CC72B2A000F3CFE /* MASViewConstraint.m in Sources */,
 				426EB1AD1CC63ED8000F3CFE /* WangYiRootViewController.m in Sources */,

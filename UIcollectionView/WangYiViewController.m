@@ -10,7 +10,8 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <QuartzCore/QuartzCore.h>
-
+#import "LFirstViewController.h"
+#import "LSecondViewController.h"
 //define this constant if you want to use Masonry without the 'mas_' prefix
 #define MAS_SHORTHAND
 
@@ -19,13 +20,20 @@
 
 #import "Masonry.h"
 @interface WangYiViewController ()<UIGestureRecognizerDelegate>
-
+{
+    UILabel *previousLabel;
+    LSecondViewController *LsecondVC;
+    LFirstViewController *LFirstVC;
+    NSInteger currentTag;
+}
+@property(nonatomic,strong)UIViewController *currentVC;
 @end
 
 @implementation WangYiViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    currentTag = 1;
     NSArray *array = [NSArray arrayWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9", nil];
     
     UIView *lastView;
@@ -41,9 +49,14 @@
     
     for (int i =1 ; i<=array.count; i++) {
         UILabel *label = [[UILabel alloc] init];
+        label.tag = i;
         label.backgroundColor = [self randomColor];
         label.text = [NSString stringWithFormat:@"%d",i];
-        [contentView addSubview:label];        
+        [contentView addSubview:label];
+        label.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer  alloc] initWithTarget:self action:@selector(tapClick:)];
+        [label addGestureRecognizer:tapGesture];
+        
         [label makeConstraints:^(MASConstraintMaker *make) {
             make.height.equalTo(contentView);
             make.top.equalTo(@0);
@@ -57,6 +70,23 @@
     [contentView makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(lastView.right);
     }];
+    
+    LFirstVC = [[LFirstViewController alloc] init];
+    [self addChildViewController:LFirstVC];
+    [self.view addSubview:LFirstVC.view];
+    [LFirstVC.view makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_WangYiScrollview.bottom);
+        make.left.equalTo(@0);
+        make.right.equalTo(@0);
+        make.bottom.equalTo(@0);
+    }];
+    
+    self.currentVC = LFirstVC;
+    UILabel *label1 = [_WangYiScrollview viewWithTag:1];
+    previousLabel = label1;
+    
+    
+    LsecondVC = [[LSecondViewController alloc] init];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -126,6 +156,72 @@
     {
         
     }
+}
+
+- (void)tapClick:(UIGestureRecognizer *)gesture
+{
+    NSLog(@"tapClick");
+    UIView *view = gesture.view;
+    [previousLabel setBackgroundColor:[UIColor redColor]];
+    UILabel *currentLabel  =(UILabel *)[gesture view];
+    currentLabel.backgroundColor = [UIColor orangeColor];
+    previousLabel = currentLabel;
+    
+    /**
+     *  在iOS5中，ViewController中新添加了下面几个方法：
+     *  addChildViewController:
+     *  removeFromParentViewController
+     *  transitionFromViewController:toViewController:duration:options:animations:completion:
+     *  willMoveToParentViewController:
+     *  didMoveToParentViewController:
+     */
+    
+    if (currentTag == view.tag) {
+        return;
+    }
+    else
+    {
+        if (view.tag == 2) {
+            
+            [self addChildViewController:LsecondVC];
+            [self transitionFromViewController:self.currentVC toViewController:LsecondVC duration:2.0 options:UIViewAnimationOptionTransitionCrossDissolve animations:nil completion:^(BOOL finished) {
+                if (finished) {
+                    [self.currentVC removeFromParentViewController];
+                }else{
+                }
+            }];
+            
+            [LsecondVC.view makeConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(_WangYiScrollview.bottom);
+                make.left.equalTo(@0);
+                make.right.equalTo(@0);
+                make.bottom.equalTo(@0);
+            }];
+            self.currentVC = LsecondVC;
+        }
+        if (view.tag == 1) {
+            
+            [self addChildViewController:LFirstVC];
+            [self transitionFromViewController:self.currentVC toViewController:LFirstVC duration:2.0 options:UIViewAnimationOptionTransitionCrossDissolve animations:nil completion:^(BOOL finished) {
+                if (finished) {
+                    [self.currentVC removeFromParentViewController];
+                }else{
+                }
+            }];
+            
+            [LFirstVC.view makeConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(_WangYiScrollview.bottom);
+                make.left.equalTo(@0);
+                make.right.equalTo(@0);
+                make.bottom.equalTo(@0);
+            }];
+            
+            self.currentVC = LFirstVC;
+        }
+        
+    }
+    currentTag = view.tag;
+    
 }
 
 @end
